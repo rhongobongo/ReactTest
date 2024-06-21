@@ -1,17 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './Navbar.css';
 
-function Header() {
+const Navbar = () => {
   return (
-    <header>
-      <nav>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/cart">Cart</Link></li>
-        </ul>
-      </nav>
-    </header>
+    <nav>
+      <h1>ShopSavvy</h1>
+      <ul>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/cart">Cart</Link></li>
+        <li>Sign-in</li>
+      </ul>
+    </nav>
   );
 }
 
-export default Header;
+export default Navbar;
