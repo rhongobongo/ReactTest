@@ -1,33 +1,20 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
-import { CartContext } from '../context/CartContext';
 import './ProductPage.css';
 
-function ProductPage() {
+const ProductPage = () => {
   const { id } = useParams();
-  const [product, setProduct] = useState(null);
-  const { addToCart } = useContext(CartContext);
-
-  useEffect(() => {
-    async function fetchProduct() {
-      const response = await axios.get(`/api/products/${id}`);
-      setProduct(response.data);
-    }
-    fetchProduct();
-  }, [id]);
-
   return (
     <div className="product-page">
-      {product ? (
-        <>
-          <h1>{product.name}</h1>
-          <p>{product.price}</p>
-          <button onClick={() => addToCart(product)}>Add to Cart</button>
-        </>
-      ) : (
-        <p>Loading...</p>
-      )}
+      <h2>Product Details for {id}</h2>
+      <div className="product-details">
+        <img src="https://via.placeholder.com/300" alt="Product" />
+        <div className="price">$10.00</div>
+        <div className="description">
+          This is a placeholder description for the product.
+        </div>
+        <button className="add-to-cart-button">Add to Cart</button>
+      </div>
     </div>
   );
 }

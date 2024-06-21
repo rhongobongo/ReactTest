@@ -1,11 +1,10 @@
 import React from 'react';
-import ProductList from '../components/ProductList';
 
-function HomePage() {
+const HomePage = () => {
   return (
-    <div className="home-page">
-      <h1>Welcome to Our Store</h1>
-      <ProductList />
+    <div>
+      <h2>Welcome to ShopSavvy</h2>
+      <p>Discover our collection of amazing products.</p>
     </div>
   );
 }
